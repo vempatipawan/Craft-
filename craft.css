@@ -422,3 +422,37 @@ select.loc{
   .footer__lockup{grid-column:1;justify-self:start;}
   .footer__base{flex-direction:column;align-items:flex-start;}
 }
+
+/* ---------- pickup & delivery, given some substance ---------- */
+.fulfilment{
+  position:relative;background:var(--white);border:1px solid var(--hair);border-radius:var(--radius);
+  display:grid;grid-template-columns:1fr 1fr;overflow:hidden;
+}
+.fulfilment::before{
+  content:"";position:absolute;inset:0 0 auto;height:3px;
+  background:linear-gradient(90deg,var(--crust),var(--sand) 45%,var(--crust));
+}
+.fcol{padding:clamp(1.9rem,4vw,3.1rem);}
+.fcol+.fcol{border-left:1px solid var(--hair);}
+.medal{
+  width:52px;height:52px;border-radius:50%;display:grid;place-items:center;
+  border:1px solid rgba(107,79,58,.35);color:var(--crust);
+  background:radial-gradient(circle at 30% 25%,#FFFDF8,#F2EADC);
+  margin-bottom:var(--s3);
+}
+.fcol h3{margin:.15rem 0 .55rem;}
+.fcol>p{font-size:.875rem;color:var(--muted);margin:0 0 var(--s3);max-width:26rem;}
+.flist{list-style:none;margin:0;padding:0;border-top:1px solid var(--hair);}
+.flist li{
+  display:grid;grid-template-columns:1fr auto;gap:.4rem 1rem;align-items:baseline;
+  padding:.72rem 0;border-bottom:1px solid var(--hair);
+}
+.flist b{font-weight:500;font-size:.875rem;}
+.flist small{display:block;color:var(--muted);font-size:.75rem;margin-top:.1rem;}
+.flist em{font-style:normal;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--crust);white-space:nowrap;}
+.fnote{margin:var(--s3) 0 0;font-size:.75rem;color:var(--muted);}
+
+@media (max-width:860px){
+  .fulfilment{grid-template-columns:1fr;}
+  .fcol+.fcol{border-left:0;border-top:1px solid var(--hair);}
+}
