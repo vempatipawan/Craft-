@@ -28,7 +28,7 @@ craft-amsterdam.nl. No placeholder text, no stock imagery.
 ## What it is made of
 
 Plain HTML and CSS. No page builder, no framework, no build step, no jQuery,
-no dependencies. Markup and styles together are 35 KB.
+no dependencies. Markup and styles together are 47 KB.
 
 | | This prototype | craft-amsterdam.nl today |
 |---|---|---|

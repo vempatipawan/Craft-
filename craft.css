@@ -456,3 +456,109 @@ select.loc{
   .fulfilment{grid-template-columns:1fr;}
   .fcol+.fcol{border-left:0;border-top:1px solid var(--hair);}
 }
+
+/* ==========================================================================
+   LAYER 2  ·  tactility, scale and motion
+   ========================================================================== */
+
+/* ---------- grain. the single biggest lift for a "crafted" feel ---------- */
+.grain{
+  position:fixed;inset:-120%;z-index:1;pointer-events:none;opacity:.34;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");
+  animation:grainshift 7s steps(6) infinite;
+  mix-blend-mode:multiply;
+}
+@keyframes grainshift{
+  0%{transform:translate(0,0)}   17%{transform:translate(-4%,-3%)}
+  34%{transform:translate(3%,-4%)} 51%{transform:translate(-3%,4%)}
+  68%{transform:translate(4%,3%)}  85%{transform:translate(-2%,-2%)}
+  100%{transform:translate(0,0)}
+}
+.hero .grain-local{
+  position:absolute;inset:0;z-index:2;pointer-events:none;opacity:.5;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='m'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23m)' opacity='.4'/%3E%3C/svg%3E");
+}
+.header,.announce,.footer,main,section,.buybar{position:relative;z-index:2;}
+
+/* ---------- bigger, more confident type ---------- */
+.d0{font-size:clamp(3.1rem,9.2vw,8.5rem);line-height:.9;letter-spacing:-.035em;}
+.d1{font-size:clamp(2.6rem,6.4vw,5.4rem);letter-spacing:-.025em;}
+.d2{font-size:clamp(2.1rem,4.6vw,3.7rem);letter-spacing:-.02em;}
+.ital{font-style:italic;}
+
+/* ---------- marquee announcement ---------- */
+.announce{overflow:hidden;padding:.72rem 0;}
+.marq{display:flex;width:max-content;animation:marq 38s linear infinite;}
+.marq div{display:flex;flex:none;}
+.marq i{
+  font-style:normal;padding-inline:1.6rem;white-space:nowrap;
+  display:inline-flex;align-items:center;gap:1.6rem;
+}
+.marq i::after{content:"";width:4px;height:4px;border-radius:50%;background:rgba(220,203,168,.5);}
+@keyframes marq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){ .marq{animation:none;} .grain{animation:none;} }
+
+/* ---------- full-height hero with parallax ---------- */
+.hero{min-height:100svh;display:flex;align-items:flex-end;}
+.hero__media img{transform:scale(1.08);will-change:transform;}
+.hero__in{padding-block:0 clamp(3.5rem,9vw,7rem);max-width:min(92%,54rem);}
+.hero__kicker{
+  display:flex;align-items:center;gap:.9rem;margin-bottom:var(--s3);
+  font-size:.625rem;letter-spacing:.28em;text-transform:uppercase;color:var(--sand);
+}
+.hero__kicker::before{content:"";width:44px;height:1px;background:var(--sand);opacity:.7;}
+.scrollcue{
+  position:absolute;right:0;bottom:clamp(3.5rem,9vw,7rem);
+  writing-mode:vertical-rl;font-size:.563rem;letter-spacing:.3em;text-transform:uppercase;
+  color:rgba(246,243,239,.5);display:flex;align-items:center;gap:.8rem;
+}
+.scrollcue::after{content:"";width:1px;height:52px;background:linear-gradient(rgba(246,243,239,.5),transparent);}
+@media (max-width:760px){ .scrollcue{display:none;} }
+
+/* ---------- line-by-line reveal ---------- */
+.ln{display:block;overflow:hidden;padding-bottom:.14em;margin-bottom:-.14em;}
+.ln>span{display:block;transform:translateY(105%);transition:transform 1s var(--ease);}
+.is-in .ln>span{transform:none;}
+.is-in .ln:nth-child(2)>span{transition-delay:.09s;}
+.is-in .ln:nth-child(3)>span{transition-delay:.18s;}
+
+/* ---------- horizontal scroll rail ---------- */
+.hrail{
+  display:flex;gap:var(--s3);overflow-x:auto;overflow-y:hidden;
+  scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;
+  padding:.4rem max(1.25rem, calc(50vw - var(--shell)/2)) 1.4rem;
+  scroll-padding-inline:max(1.25rem, calc(50vw - var(--shell)/2));
+  margin-inline:calc(50% - 50vw);width:100vw;
+  scrollbar-width:thin;scrollbar-color:rgba(107,79,58,.35) transparent;
+}
+.hrail::-webkit-scrollbar{height:3px;}
+.hrail::-webkit-scrollbar-thumb{background:rgba(107,79,58,.35);}
+.hrail>*{flex:0 0 clamp(230px,26vw,330px);scroll-snap-align:start;}
+.hrail .card{background:transparent;border:0;}
+.hrail .card__media{aspect-ratio:4/5;border-radius:var(--radius);}
+.hrail .card__body{padding:.95rem .1rem 0;}
+.railhead{display:flex;align-items:flex-end;justify-content:space-between;gap:var(--s3);margin-bottom:var(--s3);}
+.railhint{font-size:.625rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);white-space:nowrap;}
+
+/* ---------- editorial craftsmanship block ---------- */
+.edit{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,6vw,5rem);align-items:center;}
+.edit__media{position:relative;}
+.edit__media img{border-radius:var(--radius);}
+.edit__media .stamp{
+  position:absolute;left:-1.6rem;bottom:-1.6rem;width:clamp(120px,15vw,168px);aspect-ratio:1;
+  border-radius:50%;background:var(--espresso);color:var(--sand);
+  display:grid;place-items:center;text-align:center;padding:1rem;
+  font-size:.625rem;letter-spacing:.2em;text-transform:uppercase;line-height:1.9;
+  border:1px solid rgba(201,161,90,.4);
+}
+.edit__media .stamp b{display:block;font-family:var(--display);font-size:2.2rem;letter-spacing:0;color:var(--paper);}
+
+/* ---------- big statement ---------- */
+.statement{background:var(--espresso);color:var(--paper);text-align:center;overflow:hidden;}
+.statement .d0{color:var(--paper);}
+.statement .sub{color:var(--sand);font-size:.688rem;letter-spacing:.28em;text-transform:uppercase;margin-top:var(--s3);}
+
+@media (max-width:900px){
+  .edit{grid-template-columns:1fr;}
+  .edit__media .stamp{left:auto;right:1rem;bottom:-1.2rem;}
+}

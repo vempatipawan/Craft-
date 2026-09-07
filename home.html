@@ -13,9 +13,13 @@
 <link rel="stylesheet" href="craft.css">
 </head>
 <body>
+<div class="grain" aria-hidden="true"></div>
 
 <div class="announce">
-  100% Gluten Free <span>&bull;</span> Crafted in the Netherlands <span class="hide-sm">&bull;</span><span class="hide-sm" style="opacity:1;margin:0"> Loved Worldwide</span>
+  <div class="marq" aria-hidden="true">
+    <div><i>100% Gluten Free</i><i>Crafted in the Netherlands</i><i>Loved Worldwide</i><i>Baked Fresh Every Morning</i><i>Amsterdam &middot; Arnhem &middot; Almere</i></div>
+    <div><i>100% Gluten Free</i><i>Crafted in the Netherlands</i><i>Loved Worldwide</i><i>Baked Fresh Every Morning</i><i>Amsterdam &middot; Arnhem &middot; Almere</i></div>
+  </div>
 </div>
 
 <header class="header">
@@ -41,67 +45,75 @@
 </header>
 
 <!-- ===================== HERO ===================== -->
-<section class="hero">
+<section class="hero rv">
   <div class="hero__media">
     <picture>
       <source media="(max-width:760px)" srcset="img/hero-sm.jpg">
-      <img src="img/hero.jpg" alt="A freshly baked Craft croissant, golden and layered" width="1800" height="1100" fetchpriority="high" decoding="async">
+      <img id="heroImg" src="img/hero.jpg" alt="A freshly baked Craft croissant, golden and layered" width="1800" height="1050" fetchpriority="high" decoding="async">
     </picture>
   </div>
   <div class="hero__scrim"></div>
+  <div class="grain-local" aria-hidden="true"></div>
   <div class="shell hero__in">
-    <h1 class="display d1">The world&rsquo;s<br>finest gluten&#8209;free<br>bakery experience.</h1>
-    <p class="hero__sub">Crafted in the Netherlands.<br>Loved worldwide.</p>
+    <p class="hero__kicker">Amsterdam &middot; Arnhem &middot; Almere</p>
+    <h1 class="display d0">
+      <span class="ln"><span>The world&rsquo;s</span></span>
+      <span class="ln"><span>finest <em class="ital">gluten&#8209;free</em></span></span>
+      <span class="ln"><span>bakery.</span></span>
+    </h1>
+    <p class="hero__sub">Crafted in the Netherlands. Loved worldwide.</p>
     <div class="hero__cta">
       <a class="btn btn--sand" href="product.html">Order online <span class="arw">&rarr;</span></a>
       <a class="btn btn--ghost" href="#bakeries" style="color:var(--paper)">Visit our bakeries <span class="arw">&rarr;</span></a>
     </div>
+    <span class="scrollcue">Scroll</span>
   </div>
 </section>
 
 <!-- ===================== ICONIC CROISSANTS ===================== -->
-<section class="section shell" id="shop">
-  <div class="center rv" style="margin-bottom:var(--s4)">
-    <p class="eyebrow">Crafted fresh every day</p>
-    <h2 class="display d2">Our iconic croissants</h2>
-    <p class="lede" style="margin-top:var(--s2)">The reason people travel across the country, and occasionally across the world. Laminated by hand, baked every morning, and completely gluten free.</p>
+<section class="section" id="shop">
+  <div class="shell railhead rv">
+    <div>
+      <p class="eyebrow">Crafted fresh every day</p>
+      <h2 class="display d2">Our iconic<br>croissants</h2>
+    </div>
+    <p class="railhint">Drag to explore &rarr;</p>
   </div>
-
-  <div class="rail">
-    <a class="card rv" href="product.html">
+  <div class="hrail">
+    <a class="card" href="product.html">
       <div class="card__media"><img src="img/croissant-naturel-sm.jpg" alt="Croissant naturel" width="440" height="440" loading="lazy" decoding="async"></div>
-      <div class="card__body">
-        <div><h3 class="card__name">Croissant naturel</h3><p class="card__price">&euro;3,30</p></div>
-        <span class="card__add" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6.5 1v11M1 6.5h11"/></svg></span>
-      </div>
+      <div class="card__body"><div><h3 class="card__name">Croissant naturel</h3><p class="card__price">&euro;3,30</p></div>
+      <span class="card__add" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6.5 1v11M1 6.5h11"/></svg></span></div>
     </a>
-    <a class="card rv" href="product.html">
-      <div class="card__media"><img src="img/croissant-suiker-sm.jpg" alt="Almond croissant" width="440" height="440" loading="lazy" decoding="async"></div>
-      <div class="card__body">
-        <div><h3 class="card__name">Croissant amandel</h3><p class="card__price">&euro;4,25</p></div>
-        <span class="card__add" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6.5 1v11M1 6.5h11"/></svg></span>
-      </div>
+    <a class="card" href="product.html">
+      <div class="card__media"><img src="img/croissant-suiker-sm.jpg" alt="Croissant amandel" width="440" height="440" loading="lazy" decoding="async"></div>
+      <div class="card__body"><div><h3 class="card__name">Croissant amandel</h3><p class="card__price">&euro;4,25</p></div>
+      <span class="card__add" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6.5 1v11M1 6.5h11"/></svg></span></div>
     </a>
-    <a class="card rv" href="product.html">
-      <div class="card__media"><img src="img/croissant-kaas-sm.jpg" alt="Cheese croissant" width="440" height="440" loading="lazy" decoding="async"></div>
-      <div class="card__body">
-        <div><h3 class="card__name">Croissant kaas</h3><p class="card__price">&euro;3,75</p></div>
-        <span class="card__add" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6.5 1v11M1 6.5h11"/></svg></span>
-      </div>
+    <a class="card" href="product.html">
+      <div class="card__media"><img src="img/croissant-kaas-sm.jpg" alt="Croissant kaas" width="440" height="440" loading="lazy" decoding="async"></div>
+      <div class="card__body"><div><h3 class="card__name">Croissant kaas</h3><p class="card__price">&euro;3,75</p></div>
+      <span class="card__add" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6.5 1v11M1 6.5h11"/></svg></span></div>
     </a>
-    <a class="card rv" href="product.html">
+    <a class="card" href="product.html">
       <div class="card__media"><img src="img/croissant-amandel-sm.jpg" alt="Croissant ham-kaas" width="440" height="440" loading="lazy" decoding="async"></div>
-      <div class="card__body">
-        <div><h3 class="card__name">Croissant ham-kaas</h3><p class="card__price">&euro;3,80</p></div>
-        <span class="card__add" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6.5 1v11M1 6.5h11"/></svg></span>
-      </div>
+      <div class="card__body"><div><h3 class="card__name">Croissant ham-kaas</h3><p class="card__price">&euro;3,80</p></div>
+      <span class="card__add" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6.5 1v11M1 6.5h11"/></svg></span></div>
     </a>
-    <a class="card rv" href="product.html">
+    <a class="card" href="product.html">
       <div class="card__media"><img src="img/gevulde-koek-sm.jpg" alt="Gevulde koek" width="440" height="440" loading="lazy" decoding="async"></div>
-      <div class="card__body">
-        <div><h3 class="card__name">Gevulde koek</h3><p class="card__price">&euro;3,30</p></div>
-        <span class="card__add" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6.5 1v11M1 6.5h11"/></svg></span>
-      </div>
+      <div class="card__body"><div><h3 class="card__name">Gevulde koek</h3><p class="card__price">&euro;3,30</p></div>
+      <span class="card__add" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6.5 1v11M1 6.5h11"/></svg></span></div>
+    </a>
+    <a class="card" href="product.html">
+      <div class="card__media"><img src="img/pistachio-cake-sm.jpg" alt="Pistachio cake" width="440" height="440" loading="lazy" decoding="async"></div>
+      <div class="card__body"><div><h3 class="card__name">Pistachio cake</h3><p class="card__price">&euro;3,75</p></div>
+      <span class="card__add" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6.5 1v11M1 6.5h11"/></svg></span></div>
+    </a>
+    <a class="card" href="product.html">
+      <div class="card__media"><img src="img/bol-multizaad-sm.jpg" alt="Donker meerzaden bol" width="440" height="440" loading="lazy" decoding="async"></div>
+      <div class="card__body"><div><h3 class="card__name">Donker meerzaden bol</h3><p class="card__price">&euro;3,10</p></div>
+      <span class="card__add" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6.5 1v11M1 6.5h11"/></svg></span></div>
     </a>
   </div>
 </section>
@@ -127,17 +139,34 @@
 
 <!-- ===================== CRAFTSMANSHIP ===================== -->
 <section class="section" id="craft">
-  <div class="shell" class="grid-2" style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4.5rem);align-items:center">
+  <div class="shell edit">
     <div class="rv">
       <p class="eyebrow">Craftsmanship</p>
-      <h2 class="display d2">A bakery that happens to be gluten free.</h2>
+      <h2 class="display d2">
+        <span class="ln"><span>A bakery that</span></span>
+        <span class="ln"><span>happens to be</span></span>
+        <span class="ln"><span><em class="ital">gluten free.</em></span></span>
+      </h2>
       <p class="lede" style="margin-top:var(--s3)">Gerry and Nil&uuml;fer opened the first Craft on 5 June 2020, around the corner from the Albert Cuyp market. The idea was simple and slightly stubborn: stop making gluten-free bread that tastes like an apology.</p>
-      <p class="lede" style="margin-top:var(--s2)">Everything is laminated, proved and baked by hand in our own bakery. There is no wheat flour on the premises, so there is nothing to cross-contaminate. That is not a claim on a label. It is how the building works.</p>
-      <a class="btn btn--ghost" href="#" style="margin-top:var(--s3)">Read our story <span class="arw">&rarr;</span></a>
+      <p class="lede" style="margin-top:var(--s2)">Everything is laminated, proved and baked by hand in our own bakery. No wheat flour comes through the door, so there is nothing to cross-contaminate. That is not a claim on a label. It is how the building works.</p>
+      <a class="btn btn--ghost" href="#" style="margin-top:var(--s4)">Read our story <span class="arw">&rarr;</span></a>
     </div>
-    <div class="rv">
-      <img src="img/founders.jpg" alt="Gerry and Nil&uuml;fer, founders of Craft Coffee &amp; Pastry" width="1000" height="750" loading="lazy" decoding="async" style="border-radius:var(--radius)">
+    <div class="edit__media rv">
+      <img src="img/founders.jpg" alt="Gerry and Nil&uuml;fer, founders of Craft Coffee &amp; Pastry" width="1000" height="780" loading="lazy" decoding="async">
+      <span class="stamp"><span><b>2020</b>Baking since</span></span>
     </div>
+  </div>
+</section>
+
+<!-- ===================== STATEMENT ===================== -->
+<section class="statement section">
+  <div class="grain-local" aria-hidden="true" style="opacity:.35"></div>
+  <div class="shell rv">
+    <h2 class="display d0">
+      <span class="ln"><span>Thirty&#8209;two layers.</span></span>
+      <span class="ln"><span><em class="ital">Zero</em> wheat.</span></span>
+    </h2>
+    <p class="sub">Laminated by hand &middot; Proved overnight &middot; Baked before you wake</p>
   </div>
 </section>
 
@@ -145,7 +174,7 @@
 <section class="section section--tight shell" id="bakeries">
   <div class="rv" style="margin-bottom:var(--s4);max-width:34rem">
     <p class="eyebrow">Three artisan bakeries</p>
-    <h2 class="display d2">Freshly baked in Amsterdam, Arnhem and Almere.</h2>
+    <h2 class="display d2"><span class="ln"><span>Freshly baked in</span></span><span class="ln"><span>three artisan bakeries.</span></span></h2>
   </div>
   <div class="bakeries">
     <a class="bakery rv" href="#">
@@ -291,6 +320,33 @@
     en.forEach(function(e){ if(e.isIntersecting){e.target.classList.add('is-in');io.unobserve(e.target);} });
   },{rootMargin:'0px 0px -8% 0px',threshold:.06});
   els.forEach(function(e){io.observe(e);});
+})();
+</script>
+
+<script>
+/* hero parallax, cheap and smooth */
+(function(){
+  var img=document.getElementById('heroImg'); if(!img) return;
+  if(window.matchMedia('(prefers-reduced-motion:reduce)').matches) return;
+  var t=false;
+  addEventListener('scroll',function(){
+    if(t) return; t=true;
+    requestAnimationFrame(function(){
+      var y=Math.min(window.scrollY,900);
+      img.style.transform='scale(1.08) translate3d(0,'+(y*0.16)+'px,0)';
+      t=false;
+    });
+  },{passive:true});
+})();
+
+/* drag to scroll the croissant rail */
+(function(){
+  var r=document.querySelector('.hrail'); if(!r) return;
+  var down=false,sx=0,sl=0;
+  r.addEventListener('pointerdown',function(e){down=true;sx=e.clientX;sl=r.scrollLeft;r.style.cursor='grabbing';});
+  addEventListener('pointerup',function(){down=false;r.style.cursor='';});
+  r.addEventListener('pointermove',function(e){ if(!down) return; e.preventDefault(); r.scrollLeft=sl-(e.clientX-sx); });
+  r.style.cursor='grab';
 })();
 </script>
 </body>
