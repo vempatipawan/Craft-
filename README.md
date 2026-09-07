@@ -28,12 +28,12 @@ craft-amsterdam.nl. No placeholder text, no stock imagery.
 ## What it is made of
 
 Plain HTML and CSS. No page builder, no framework, no build step, no jQuery,
-no dependencies. Markup and styles together are 30 KB.
+no dependencies. Markup and styles together are 35 KB.
 
 | | This prototype | craft-amsterdam.nl today |
 |---|---|---|
-| Homepage on mobile | 216 KB | 2,480 KB |
-| Product page | 276 KB | 617 KB |
+| Homepage on mobile | 357 KB | 2,480 KB |
+| Product page | 387 KB | 617 KB |
 
 Measured on the same method used for the site audit: a mid-range phone profile,
 four times processor slowdown, roughly 1.6 Mbps.

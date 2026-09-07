@@ -30,6 +30,7 @@
     <button class="burger" aria-label="Menu">
       <svg width="20" height="14" viewBox="0 0 20 14" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M0 1h20M0 7h20M0 13h20"/></svg>
     </button>
+    <a class="btn btn--primary header__cta" href="product.html">Order online</a>
     <div class="tools">
       <a class="tool" href="#" aria-label="Search"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="8" cy="8" r="6"/><path d="M12.5 12.5 17 17"/></svg></a>
       <a class="tool" href="#" aria-label="Account"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="9" cy="6" r="3.2"/><path d="M2.5 16c.9-3.4 3.4-5 6.5-5s5.6 1.6 6.5 5"/></svg></a>
@@ -176,23 +177,76 @@
   </div>
 </section>
 
+<div class="band" role="presentation"></div>
+
 <footer class="footer">
   <div class="shell">
-    <div class="footer__grid">
+    <div class="footer__top">
+
       <div>
-        <a class="logo" href="home.html" style="color:var(--paper)">CRAFT<small style="color:rgba(246,243,239,.5)">COFFEE &amp; PASTRY</small></a>
-        <p class="small" style="color:rgba(246,243,239,.6);margin-top:var(--s2);max-width:20rem">A premium 100% gluten-free bakery. Crafted in the Netherlands, loved worldwide.</p>
+        <svg class="footer__mark" viewBox="0 0 40 52" fill="none" stroke="#DCCBA8" stroke-width="1.7" stroke-linecap="round" aria-hidden="true">
+      <path d="M20 51V13"/>
+      <path d="M20 13c0-5.6 3.4-10.2 8.6-12C29.4 6.6 26.8 12 20 13Z"/>
+      <path d="M20 13c0-5.6-3.4-10.2-8.6-12C10.6 6.6 13.2 12 20 13Z"/>
+      <path d="M20 25c0-5.2 3.2-9.4 8-11 .8 5.2-1.6 10.2-8 11Z"/>
+      <path d="M20 25c0-5.2-3.2-9.4-8-11-.8 5.2 1.6 10.2 8 11Z"/>
+      <path d="M20 37c0-5.2 3.2-9.4 8-11 .8 5.2-1.6 10.2-8 11Z"/>
+      <path d="M20 37c0-5.2-3.2-9.4-8-11-.8 5.2 1.6 10.2 8 11Z"/>
+    </svg>
+        <p class="footer__tag">Discover unforgettable flavours and mornings at Craft.</p>
+        <a class="btn btn--ghost" href="product.html" style="color:var(--sand);border-color:rgba(201,161,90,.55)">Order online <span class="arw">&rarr;</span></a>
       </div>
-      <div><h4>Shop</h4><ul><li><a href="product.html">Croissants</a></li><li><a href="#">Bread</a></li><li><a href="#">Pastry</a></li><li><a href="#">Cakes &amp; sweets</a></li></ul></div>
-      <div><h4>Bakeries</h4><ul><li><a href="#">Amsterdam</a></li><li><a href="#">Arnhem</a></li><li><a href="#">Almere</a></li><li><a href="#">Business &amp; wholesale</a></li></ul></div>
-      <div><h4>Help</h4><ul><li><a href="home.html#delivery">Pickup &amp; delivery</a></li><li><a href="#">Allergens</a></li><li><a href="#">Contact</a></li><li><a href="#">My account</a></li></ul></div>
+
+      <ul class="footer__big">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="product.html">Shop</a></li>
+        <li><a href="home.html#bakeries">Bakeries</a></li>
+        <li><a href="home.html#delivery">Pickup &amp; Delivery</a></li>
+        <li><a href="home.html#craft">Craftsmanship</a></li>
+        <li><a href="#">Business</a></li>
+      </ul>
+
+      <div class="footer__links">
+        <h4>Good to know</h4>
+        <ul>
+          <li><a href="#">Allergens &amp; ingredients</a></li>
+          <li><a href="#">Gift cards</a></li>
+          <li><a href="#">Wholesale enquiries</a></li>
+          <li><a href="#">Frequently asked questions</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__links">
+        <h4>Follow</h4>
+        <ul>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">TikTok</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__lockup">
+        <b>CRAFT</b><span>COFFEE &amp; PASTRY</span>
+      </div>
+
     </div>
+
     <div class="footer__base">
-      <span>&copy; 2026 Craft Coffee &amp; Pastry BV</span>
+      <div class="footer__legal">
+        <span>&copy; 2026 Craft Coffee &amp; Pastry BV</span>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Cookie Policy</a>
+        <a href="#">Allergen Policy</a>
+        <a href="#">Terms and Conditions</a>
+      </div>
       <span>Prototype by Maan Singh</span>
     </div>
   </div>
 </footer>
+
+<div class="band band--slim" role="presentation"></div>
 
 <!-- sticky mobile buy bar -->
 <div class="buybar" id="buybar">
