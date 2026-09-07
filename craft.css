@@ -345,13 +345,35 @@ select.loc{
    ORNAMENT, HEADER AND FOOTER
    ========================================================================== */
 
-/* decorative band, the Craft answer to a patterned frieze */
+/* decorative band: typographic, not a pattern. Reads as designed, not decorated. */
 .band{
-  height:66px;
-  background:var(--espresso) url("img/band.jpg") repeat-x center/auto 100%;
-  border-block:1px solid rgba(201,161,90,.22);
+  background:var(--espresso);
+  border-block:1px solid rgba(201,161,90,.28);
+  overflow:hidden;
+  padding-block:1.15rem;
 }
-.band--slim{height:52px;}
+.band__marq{display:flex;width:max-content;animation:bandmarq 44s linear infinite;}
+.band__marq>div{display:flex;flex:none;}
+.band__marq i{
+  font-style:normal;font-family:var(--display);
+  font-size:1.05rem;letter-spacing:.34em;text-transform:uppercase;
+  color:var(--sand);opacity:.82;
+  padding-inline:1.5rem;white-space:nowrap;
+  display:inline-flex;align-items:center;gap:1.5rem;
+}
+.band__marq i::after{
+  content:"";width:5px;height:5px;transform:rotate(45deg);
+  background:rgba(201,161,90,.55);flex:none;
+}
+@keyframes bandmarq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.band--slim{padding-block:.85rem;}
+.band--slim i{font-size:.813rem;letter-spacing:.3em;opacity:.6;}
+@media (prefers-reduced-motion:reduce){ .band__marq{animation:none;} }
+@media (max-width:760px){
+  .band{padding-block:.9rem;}
+  .band i{font-size:.813rem;letter-spacing:.26em;padding-inline:1rem;gap:1rem;}
+  .band--slim i{font-size:.688rem;}
+}
 
 /* small gold rule used under eyebrows and in the footer */
 .rule-gold{height:1px;background:linear-gradient(90deg,rgba(201,161,90,.55),rgba(201,161,90,.06));border:0;margin:0;}
@@ -410,7 +432,6 @@ select.loc{
   .footer__lockup{grid-column:3;justify-self:start;}
 }
 @media (max-width:760px){
-  .band{height:52px;} .band--slim{height:38px;}
   .logo{font-size:1rem;letter-spacing:.2em;}
   .logo small{font-size:.438rem;letter-spacing:.24em;white-space:nowrap;}
   .footer__legal{gap:.4rem var(--s2);font-size:.688rem;}
@@ -423,38 +444,56 @@ select.loc{
   .footer__base{flex-direction:column;align-items:flex-start;}
 }
 
-/* ---------- pickup & delivery, given some substance ---------- */
-.fulfilment{
-  position:relative;background:var(--white);border:1px solid var(--hair);border-radius:var(--radius);
-  display:grid;grid-template-columns:1fr 1fr;overflow:hidden;
-}
-.fulfilment::before{
-  content:"";position:absolute;inset:0 0 auto;height:3px;
-  background:linear-gradient(90deg,var(--crust),var(--sand) 45%,var(--crust));
-}
-.fcol{padding:clamp(1.9rem,4vw,3.1rem);}
-.fcol+.fcol{border-left:1px solid var(--hair);}
-.medal{
-  width:52px;height:52px;border-radius:50%;display:grid;place-items:center;
-  border:1px solid rgba(107,79,58,.35);color:var(--crust);
-  background:radial-gradient(circle at 30% 25%,#FFFDF8,#F2EADC);
-  margin-bottom:var(--s3);
-}
-.fcol h3{margin:.15rem 0 .55rem;}
-.fcol>p{font-size:.875rem;color:var(--muted);margin:0 0 var(--s3);max-width:26rem;}
-.flist{list-style:none;margin:0;padding:0;border-top:1px solid var(--hair);}
-.flist li{
-  display:grid;grid-template-columns:1fr auto;gap:.4rem 1rem;align-items:baseline;
-  padding:.72rem 0;border-bottom:1px solid var(--hair);
-}
-.flist b{font-weight:500;font-size:.875rem;}
-.flist small{display:block;color:var(--muted);font-size:.75rem;margin-top:.1rem;}
-.flist em{font-style:normal;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--crust);white-space:nowrap;}
-.fnote{margin:var(--s3) 0 0;font-size:.75rem;color:var(--muted);}
+/* ---------- pickup & delivery: dark, full bleed, switchable ---------- */
+.ways{position:relative;background:var(--espresso);color:var(--paper);overflow:hidden;}
+.ways .eyebrow{color:var(--sand);}
+.ways .d2{color:var(--paper);}
 
-@media (max-width:860px){
-  .fulfilment{grid-template-columns:1fr;}
-  .fcol+.fcol{border-left:0;border-top:1px solid var(--hair);}
+.switch{
+  display:inline-flex;position:relative;margin:var(--s4) 0 var(--s5);
+  border-bottom:1px solid rgba(246,243,239,.18);
+}
+.switch button{
+  font-family:var(--display);font-size:clamp(1.5rem,3.4vw,2.6rem);letter-spacing:-.01em;
+  color:rgba(246,243,239,.34);padding:0 clamp(1rem,3vw,2.2rem) .7rem;
+  transition:color .4s var(--ease);line-height:1.1;
+}
+.switch button[aria-selected="true"]{color:var(--paper);}
+.switch__ink{
+  position:absolute;bottom:-1px;height:2px;background:var(--sand);
+  transition:transform .55s var(--ease),width .55s var(--ease);
+}
+
+.way{display:none;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,6vw,5rem);align-items:center;}
+.way.is-on{display:grid;animation:wayin .65s var(--ease) both;}
+@keyframes wayin{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+
+.wayline{list-style:none;margin:0;padding:0;counter-reset:w;}
+.wayline li{
+  counter-increment:w;display:grid;grid-template-columns:2.2rem 1fr auto;
+  gap:.4rem clamp(.75rem,2vw,1.5rem);align-items:baseline;
+  padding:clamp(1rem,2.4vw,1.5rem) 0;border-bottom:1px solid rgba(246,243,239,.14);
+}
+.wayline li:first-child{border-top:1px solid rgba(246,243,239,.14);}
+.wayline li::before{
+  content:"0" counter(w);font-family:var(--display);font-size:.813rem;
+  color:var(--sand);opacity:.7;
+}
+.wayline b{font-family:var(--display);font-weight:400;font-size:clamp(1.25rem,2.4vw,1.85rem);letter-spacing:-.01em;}
+.wayline small{display:block;font-size:.813rem;color:rgba(246,243,239,.55);margin-top:.2rem;}
+.wayline em{
+  font-style:normal;font-size:.688rem;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--sand);white-space:nowrap;
+}
+.waynote{margin:var(--s3) 0 0;font-size:.813rem;color:rgba(246,243,239,.55);}
+.waymedia{position:relative;aspect-ratio:4/5;border-radius:var(--radius);overflow:hidden;background:#0E0906;}
+.waymedia img{width:100%;height:100%;object-fit:cover;opacity:.88;}
+.waymedia::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(12,8,6,.55),transparent 55%);}
+
+@media (max-width:900px){
+  .way{grid-template-columns:1fr;}
+  .waymedia{aspect-ratio:16/10;order:-1;}
+  .switch{margin-bottom:var(--s4);}
 }
 
 /* ==========================================================================

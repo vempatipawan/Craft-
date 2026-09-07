@@ -196,37 +196,47 @@
 </section>
 
 <!-- ===================== PICKUP & DELIVERY ===================== -->
-<section class="section shell" id="delivery">
-  <div class="center rv" style="margin-bottom:var(--s4)">
+<section class="ways section" id="delivery">
+  <div class="grain-local" aria-hidden="true" style="opacity:.32"></div>
+  <div class="shell rv">
     <p class="eyebrow">Two ways to get them</p>
-    <h2 class="display d2">Baked to order, never off a shelf.</h2>
-  </div>
+    <h2 class="display d2">
+      <span class="ln"><span>Baked to order,</span></span>
+      <span class="ln"><span><em class="ital">never</em> off a shelf.</span></span>
+    </h2>
 
-  <div class="fulfilment rv">
-    <div class="fcol">
-      <span class="medal"><svg width="21" height="21" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M10 18.5c-3.9-3-6.5-6.1-6.5-9.7a6.5 6.5 0 0 1 13 0c0 3.6-2.6 6.7-6.5 9.7Z"/><circle cx="10" cy="8.6" r="2.2"/></svg></span>
-      <p class="eyebrow" style="margin-bottom:.35rem">Pickup</p>
-      <h3 class="display d3">Collect from any of our three bakeries.</h3>
-      <p>Choose your bakery and your day before you pay. Collection orders are placed at least two days ahead, because everything is baked to order.</p>
-      <ul class="flist">
-        <li><div><b>Amsterdam</b><small>Gerard Doustraat 103A, De Pijp</small></div><em>Wed to Sat, 10&ndash;16</em></li>
-        <li><div><b>Arnhem</b><small>Broerenstraat 29B</small></div><em>Wed to Sat, 09&ndash;16</em></li>
-        <li><div><b>Almere</b><small>Markt 64, Almere Haven</small></div><em>Wed to Sat, 10&ndash;16</em></li>
-      </ul>
-      <p class="fnote">Order by Monday 23:59 for collection from Wednesday.</p>
+    <div class="switch" role="tablist" aria-label="Pickup or delivery">
+      <button id="w-pickup" role="tab" aria-selected="true" aria-controls="way-pickup">Pickup</button>
+      <button id="w-delivery" role="tab" aria-selected="false" aria-controls="way-delivery">Delivery</button>
+      <span class="switch__ink" aria-hidden="true"></span>
     </div>
 
-    <div class="fcol">
-      <span class="medal"><svg width="22" height="22" viewBox="0 0 22 20" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M1.5 4.5h11v9h-11zM12.5 7.5h3.6l3.4 3.4v2.6h-7z"/><circle cx="5.2" cy="15.6" r="1.9"/><circle cx="16.2" cy="15.6" r="1.9"/></svg></span>
-      <p class="eyebrow" style="margin-bottom:.35rem">Delivery</p>
-      <h3 class="display d3">Netherlands, Belgium and Germany.</h3>
-      <p>Dispatched twice a week by PostNL so your croissants arrive within a day of leaving the oven. The delivery day is shown before you pay, not after.</p>
-      <ul class="flist">
-        <li><div><b>Netherlands</b><small>Arrives Wednesday or Friday</small></div><em>&euro;6,95</em></li>
-        <li><div><b>Belgium</b><small>Arrives Friday</small></div><em>&euro;12,50</em></li>
-        <li><div><b>Germany</b><small>Arrives Friday</small></div><em>&euro;12,50</em></li>
-      </ul>
-      <p class="fnote">Packed cold and sealed the morning they are baked.</p>
+    <div class="way is-on" id="way-pickup" role="tabpanel" aria-labelledby="w-pickup">
+      <div>
+        <ul class="wayline">
+          <li><div><b>Amsterdam</b><small>Gerard Doustraat 103A, De Pijp</small></div><em>Wed to Sat &middot; 10&ndash;16</em></li>
+          <li><div><b>Arnhem</b><small>Broerenstraat 29B</small></div><em>Wed to Sat &middot; 09&ndash;16</em></li>
+          <li><div><b>Almere</b><small>Markt 64, Almere Haven</small></div><em>Wed to Sat &middot; 10&ndash;16</em></li>
+        </ul>
+        <p class="waynote">Order by Monday 23:59 for collection from Wednesday. Everything is baked to order, so the day you choose is the day it comes out of the oven.</p>
+      </div>
+      <div class="waymedia">
+        <img src="img/bakery-amsterdam.jpg" alt="Inside the Craft bakery in Amsterdam" width="720" height="960" loading="lazy" decoding="async">
+      </div>
+    </div>
+
+    <div class="way" id="way-delivery" role="tabpanel" aria-labelledby="w-delivery" hidden>
+      <div>
+        <ul class="wayline">
+          <li><div><b>Netherlands</b><small>Arrives Wednesday or Friday</small></div><em>&euro;6,95</em></li>
+          <li><div><b>Belgium</b><small>Arrives Friday</small></div><em>&euro;12,50</em></li>
+          <li><div><b>Germany</b><small>Arrives Friday</small></div><em>&euro;12,50</em></li>
+        </ul>
+        <p class="waynote">Dispatched twice a week by PostNL, packed cold and sealed the morning they are baked, so they reach you within a day of leaving the oven. The delivery day is shown before you pay, not after.</p>
+      </div>
+      <div class="waymedia">
+        <img src="img/bakery-almere.jpg" alt="Craft bread ready to be packed" width="720" height="960" loading="lazy" decoding="async">
+      </div>
     </div>
   </div>
 </section>
@@ -240,7 +250,12 @@
   </div>
 </section>
 
-<div class="band" role="presentation"></div>
+<div class="band" aria-hidden="true">
+  <div class="band__marq">
+    <div><i>Craft</i><i>Coffee &amp; Pastry</i><i>Amsterdam</i><i>Arnhem</i><i>Almere</i><i>100% Gluten Free</i></div>
+    <div><i>Craft</i><i>Coffee &amp; Pastry</i><i>Amsterdam</i><i>Arnhem</i><i>Almere</i><i>100% Gluten Free</i></div>
+  </div>
+</div>
 
 <footer class="footer">
   <div class="shell">
@@ -309,7 +324,12 @@
   </div>
 </footer>
 
-<div class="band band--slim" role="presentation"></div>
+<div class="band band--slim" aria-hidden="true">
+  <div class="band__marq">
+    <div><i>Baked fresh every morning</i><i>Since 2020</i><i>Crafted in the Netherlands</i><i>Loved worldwide</i></div>
+    <div><i>Baked fresh every morning</i><i>Since 2020</i><i>Crafted in the Netherlands</i><i>Loved worldwide</i></div>
+  </div>
+</div>
 
 <script>
 /* Reveal on scroll. One observer, no library. */
@@ -347,6 +367,34 @@
   addEventListener('pointerup',function(){down=false;r.style.cursor='';});
   r.addEventListener('pointermove',function(e){ if(!down) return; e.preventDefault(); r.scrollLeft=sl-(e.clientX-sx); });
   r.style.cursor='grab';
+})();
+</script>
+<script>
+/* pickup / delivery switch with a sliding gold underline */
+(function(){
+  var tabs=[document.getElementById('w-pickup'),document.getElementById('w-delivery')];
+  var panes={ 'w-pickup':document.getElementById('way-pickup'), 'w-delivery':document.getElementById('way-delivery') };
+  var ink=document.querySelector('.switch__ink');
+  if(!tabs[0]||!ink) return;
+  function move(btn){
+    ink.style.width=btn.offsetWidth+'px';
+    ink.style.transform='translateX('+btn.offsetLeft+'px)';
+  }
+  function set(btn){
+    tabs.forEach(function(t){
+      var on=(t===btn);
+      t.setAttribute('aria-selected',String(on));
+      panes[t.id].classList.toggle('is-on',on);
+      panes[t.id].hidden=!on;
+    });
+    move(btn);
+  }
+  tabs.forEach(function(t){ t.addEventListener('click',function(){set(t);}); });
+  move(tabs[0]);
+  addEventListener('resize',function(){
+    var cur=tabs.find(function(t){return t.getAttribute('aria-selected')==='true';});
+    if(cur) move(cur);
+  });
 })();
 </script>
 </body>
