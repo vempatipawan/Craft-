@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Craft | Final design round, Maan Singh</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="craft.css">
+<style>
+  body{background:var(--paper);}
+  .cover{padding-block:var(--s5) var(--s6);}
+  .lead-in{max-width:44rem;}
+  .jump{display:grid;grid-template-columns:1fr 1fr;gap:var(--s3);margin:var(--s4) 0 var(--s6);}
+  .jump a{
+    position:relative;display:block;border:1px solid var(--hair);border-radius:var(--radius);
+    background:var(--white);overflow:hidden;transition:transform .3s var(--ease),box-shadow .3s var(--ease);
+  }
+  .jump a:hover{transform:translateY(-3px);box-shadow:0 20px 44px -28px rgba(27,18,14,.55);}
+  .jump img{aspect-ratio:16/10;object-fit:cover;width:100%;}
+  .jump div{padding:1.1rem 1.25rem 1.35rem;display:flex;align-items:center;gap:.75rem;}
+  .jump h3{font-family:var(--display);font-size:1.25rem;margin:0;}
+  .jump p{margin:.15rem 0 0;font-size:.813rem;color:var(--muted);}
+  .imp{counter-reset:n;display:grid;gap:0;border-top:1px solid var(--hair);}
+  .imp li{
+    counter-increment:n;list-style:none;display:grid;grid-template-columns:2.6rem 1fr;
+    gap:var(--s2);padding:1.35rem 0;border-bottom:1px solid var(--hair);
+  }
+  .imp li::before{
+    content:counter(n,decimal-leading-zero);
+    font-family:var(--display);font-size:1rem;color:var(--crust);padding-top:.1rem;
+  }
+  .imp h4{margin:0 0 .3rem;font-size:.938rem;font-weight:500;}
+  .imp p{margin:0;font-size:.875rem;color:var(--muted);max-width:44rem;}
+  .meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:var(--s3);
+    border:1px solid var(--hair);border-radius:var(--radius);background:var(--white);padding:var(--s3);margin-top:var(--s4);}
+  .meta b{display:block;font-size:.688rem;letter-spacing:.16em;text-transform:uppercase;color:var(--crust);font-weight:500;margin-bottom:.25rem;}
+  .meta span{font-size:.875rem;}
+  @media(max-width:760px){ .jump{grid-template-columns:1fr;} }
+</style>
+</head>
+<body>
+
+<div class="announce">Craft Coffee &amp; Pastry <span>&bull;</span> Final design round <span>&bull;</span> 7 September 2026</div>
+
+<main class="shell cover">
+  <p class="eyebrow">Homepage and product page, desktop and mobile</p>
+  <h1 class="display d2" style="max-width:26rem">A responsive prototype, not a picture of one.</h1>
+  <p class="lede lead-in" style="margin-top:var(--s3)">
+    This is built in HTML and CSS rather than presented as flat artboards, so you can open it on your own phone
+    and use it. Tap the fulfilment tabs, change the quantity, watch the buy bar appear. That felt like the honest
+    way to show you mobile-first work, since roughly three quarters of your visitors will judge it that way.
+  </p>
+  <p class="lede lead-in" style="margin-top:var(--s2)">
+    Every product, price, description and photograph is your own, pulled from craft-amsterdam.nl. Nothing here is
+    placeholder text or stock imagery.
+  </p>
+
+  <div class="jump">
+    <a href="home.html">
+      <img src="img/hero.jpg" alt="Craft homepage" loading="lazy">
+      <div>
+        <div><h3>Homepage</h3><p>Desktop and mobile</p></div>
+        <span class="card__add" style="margin-left:auto"><svg width="13" height="13" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 7h10M7.5 2.5 12 7l-4.5 4.5"/></svg></span>
+      </div>
+    </a>
+    <a href="product.html">
+      <img src="img/croissant-naturel.jpg" alt="Craft product page" loading="lazy">
+      <div>
+        <div><h3>Product page</h3><p>Desktop and mobile</p></div>
+        <span class="card__add" style="margin-left:auto"><svg width="13" height="13" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 7h10M7.5 2.5 12 7l-4.5 4.5"/></svg></span>
+      </div>
+    </a>
+  </div>
+
+  <p class="eyebrow">What I changed, and why</p>
+  <h2 class="display d3" style="margin-bottom:var(--s3);max-width:30rem">Seven decisions where I took your direction somewhere else.</h2>
+
+  <ol class="imp">
+    <li>
+      <div><h4>Pickup or delivery is chosen on the product page, not at checkout</h4>
+      <p>Your current checkout asks for a full delivery address at field five and only asks whether the customer wants delivery at field fourteen. Someone collecting croissants in the Pijp types an address they never needed. Moving that choice up here also lets the page answer the real question, which is when can I actually have it.</p></div>
+    </li>
+    <li>
+      <div><h4>The bake schedule is a reason to buy, not small print</h4>
+      <p>Ready Wednesday, order by Monday. Made to order rather than sitting on a shelf is a premium signal, so it sits next to the price instead of hiding in a policy page.</p></div>
+    </li>
+    <li>
+      <div><h4>Gluten free is stated as craft, never as a medical warning</h4>
+      <p>Free-from comes first as a quiet row of confirmations, then the sentence that a coeliac customer actually needs: no wheat flour comes through the door, so there is nothing to cross-contaminate. Allergen detail moves into the accordion. The product stays the hero.</p></div>
+    </li>
+    <li>
+      <div><h4>The quantity cap became guidance instead of an error</h4>
+      <p>Your shop caps most items at six. Rather than letting someone pick eight and be refused, the control stops at six and explains why: you bake what is ordered.</p></div>
+    </li>
+    <li>
+      <div><h4>A sticky buy bar on mobile</h4>
+      <p>It carries the price and the chosen fulfilment date, so the decision stays visible while someone reads the ingredients. On a phone that is the difference between a considered purchase and a lost one.</p></div>
+    </li>
+    <li>
+      <div><h4>More air than the reference, and fewer boxes</h4>
+      <p>I stripped several card outlines and let the photography sit against the paper. Your food is the most premium asset you own and it competes with any border you put near it.</p></div>
+    </li>
+    <li>
+      <div><h4>Real people on the craftsmanship band</h4>
+      <p>Gerry and Nil&uuml;fer, and the actual bakery. A story about hands and a stubborn idea is more convincing than another styled flat lay, and no competitor can copy it.</p></div>
+    </li>
+  </ol>
+
+  <div class="meta">
+    <div><b>Typeface</b><span>Playfair Display &amp; Inter</span></div>
+    <div><b>Palette</b><span>Your five tokens, unchanged</span></div>
+    <div><b>Pages</b><span>Homepage and product, both breakpoints</span></div>
+    <div><b>Built with</b><span>HTML and CSS. No framework, no build step</span></div>
+    <div><b>Homepage on mobile</b><span>216&nbsp;KB, against 2,480&nbsp;KB today</span></div>
+    <div><b>Product page</b><span>276&nbsp;KB. Markup and styles are 30&nbsp;KB</span></div>
+  </div>
+
+  <p class="small" style="margin-top:var(--s4);max-width:44rem">
+    One honest note on the photography. The croissants and pastries here are your 2026 product shots and they are
+    genuinely good. The bakery and story images are from 2020, because those are what exist today. The layouts are
+    built so that new photography drops straight in without a redesign, which is the main reason I keep saying a
+    photographer is the highest-return spend on this project.
+  </p>
+
+  <p class="small" style="margin-top:var(--s3)">Maan Singh, 7 September 2026</p>
+</main>
+
+</body>
+</html>
